@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - The MuscleMart</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Add this line -->
+    <style>
+        /* Toast Notification Styles */
+        .notification {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+            width: auto;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+   
+ <!-- Header Section -->
+ <header>
+    <div class="container">
+        <div class="logo">The MuscleMart</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+
+                <li><a href="index.html#shop-categories">Shop</a></li>
+
+               
+ 
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- Toast Notification -->
+<!-- Popup for adding to cart -->
+<!-- Toast Notification for "Item Added to Cart" -->
+<div id="toast" class="popup">
+    <div class="popup-content">
+      <p>Item added to cart!</p>
+    </div>
+  </div>
+  
+  <!-- Cart Popup (Optional, if you want a more detailed cart popup) -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span id="popup-close" style="cursor: pointer;">X</span>
+      <p>Item added to cart!</p>
+    </div>
+  </div>
+  
+<!-- Search Bar Below Navigation -->
+<div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
+    <button type="submit" id="search-btn">Search</button>
+</div>
+<div class="notification" id="notification">
+    Thank You! Item added to the cart.
+</div>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2>Level Up your gains with SBD's eqquipments</h2>
+        <div class="product-grid">
+            <!-- Product Items -->
+    
+            <div class="product-item" data-name="SBD Knee Wraps">
+                <img src="eqquipments7.jpg" alt="Protein Supplement">
+                <h3>SBD Knee Wraps</h3>
+                <p>₹4999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="SBD Wrist Straps">
+                <img src="eqquipment6.jpg" alt="Protein Supplement">
+                <h3>SBD Wrist Straps</h3>
+                <p>₹1499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="SBD Powerlifting Singlet">
+                <img src="eqquipment5.jpg" alt="Protein Supplement">
+                <h3>SBD Powerlifting Singlet</h3>
+                <p>₹35000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="SBD Knee Sleeves">
+                <img src="eqquipment4.jpg" alt="Protein Supplement">
+                <h3>SBD Knee Sleeves</h3>
+                <p>₹25999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="SBD Elbow Sleeves">
+                <img src="eqquipment3.jpg" alt="Protein Supplement">
+                <h3>SBD Elbow Sleeves</h3>
+                <p>₹4599</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="SBD Lever Belt">
+                <img src="eqquipment2.jpg" alt="Protein Supplement">
+                <h3>SBD Lever Belt</h3>
+                <p>₹25799</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="SBD Socks">
+                <img src="eqquipment8.jpg" alt="Protein Supplement">
+                <h3>SBD Socks</h3>
+                <p>₹999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="SBD Flat Sole Shoes White & Black">
+                <img src="eqquipment9.jpg" alt="Protein Supplement">
+                <h3>SBD Flat Sole Shoes White & Black</h3>
+                <p>₹2499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="SBD Flat Sole Shoes Green & Black">
+                <img src="eqquipment10.jpg" alt="Protein Supplement">
+                <h3>SBD Flat Sole Shoes Green & Black</h3>
+                <p>₹2499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Chamber of Gods Ammonia Salt for Powerlifting">
+                <img src="eqquipment11.jpg" alt="Protein Supplement">
+                <h3>Chamber of Gods Ammonia Salt for Powerlifting</h3>
+                <p>₹177</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    
+    <script src="product.js"></script>
+  
+</body>
+
+   
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 The MuscleMart. All rights reserved.</p>
+    </footer>
+    <script>
+        function searchProducts() {
+            var input = document.getElementById('search-bar').value.toLowerCase();
+            var productItems = document.querySelectorAll('.product-item');
+
+            productItems.forEach(function (item) {
+                var productName = item.getAttribute('data-name').toLowerCase();
+                if (productName.indexOf(input) > -1) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+    var cartButtons = document.querySelectorAll(".add-to-cart");
+
+    cartButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            showNotification();
+        });
+    });
+});
+        function showNotification() {
+            var notification = document.getElementById('notification');
+            notification.style.display = 'block';
+
+            setTimeout(function () {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

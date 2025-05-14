@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - The MuscleMart</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Add this line -->
+    <style>
+        /* Toast Notification Styles */
+        .notification {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+            width: auto;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+   
+ <!-- Header Section -->
+ <header>
+    <div class="container">
+        <div class="logo">The MuscleMart</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+
+                <li><a href="index.html#shop-categories">Shop</a></li>
+
+               
+ 
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
+  
+  <div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
+    <button type="submit" id="search-btn">Search</button>
+</div>
+  
+<div class="notification" id="notification">
+  ThankYou! Item added to the cart.
+</div>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2>Mens-Section</h2>
+        <div class="product-grid">
+            <!-- Product Items -->
+    
+            <div class="product-item" data-name="Stringer's by Layerzz | Stringer">
+                <img src="frontwhite11.jpg" alt="Stringer">
+                <h3>Stringer's by Layerzz</h3>
+                <p>₹599</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Stringer's by Layerzz | Track Pants">
+                <img src="Stringer3.jpg" alt="Track Pants">
+                <h3>Stringer's by Layerzz</h3>
+                <p>₹899</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Stringer's by Layerzz | Hoodie">
+                <img src="one (1).jpg" alt="Hoodie">
+                <h3>Stringer's by Layerzz</h3>
+                <p>₹1299</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Stringer's by Layerzz | Compression Wear">
+                <img src="blue1.jpg" alt="Compression Wear">
+                <h3>Stringer's by Layerzz</h3>
+                <p>₹799</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Stringer's by Fuaark | T-shirt">
+                <img src="Stringer5.jpg" alt="T-shirt">
+                <h3>Stringer's by Fuaark</h3>
+                <p>₹699</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Stringer's by Fuaark | Dumbbell">
+                <img src="Stringer6.jpg" alt="Dumbbell">
+                <h3>Stringer's by Fuaark</h3>
+                <p>₹1499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Stringer's by Fuaark | Plates">
+                <img src="Stringer7.jpg" alt="Plates">
+                <h3>Stringer's by Fuaark</h3>
+                <p>₹1999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Stringer's by Fuaark | Barbell">
+                <img src="Stringer8.jpg" alt="Barbell">
+                <h3>Stringer's by Fuaark</h3>
+                <p>₹2499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Stringer's by Fuaark | Protein Supplement">
+                <img src="Stringer10.jpg" alt="Protein Supplement">
+                <h3>Stringer's by Fuaark</h3>
+                <p>₹1399</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Stringer's by Fuaark | Protein Supplement">
+                <img src="Stringer9.jpg" alt="Protein Supplement">
+                <h3>Stringer's by Fuaark</h3>
+                <p>₹1999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Skull Zip Hoodie by Layerzz">
+                <img src="hoodie1.jpg" alt="Protein Supplement">
+                <h3>Skull Zip Hoodie by Layerzz</h3>
+                <p>₹2499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Thunder Hoodie by Layerzz">
+                <img src="hoodie2.jpg" alt="Protein Supplement">
+                <h3>Thunder Hoodie by Layerzz</h3>
+                <p>₹2499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Fuaark's White Hoodie">
+                <img src="hoodie3.jpg" alt="Protein Supplement">
+                <h3>Fuaark's White Hoodie</h3>
+                <p>₹1399</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Fuaark's Brown Zip Hoodie">
+                <img src="hoodie4.jpg" alt="Protein Supplement">
+                <h3>Fuaark's Brown Zip Hoodie</h3>
+                <p>₹1399</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Fuaark's Elephant Grey Hoodie">
+                <img src="hoodie5.jpg" alt="Protein Supplement">
+                <h3>Fuaark's Elephant Grey Hoodie</h3>
+                <p>₹1999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Layerzz Skull Pant">
+                <img src="skullpant1.jpg" alt="Protein Supplement">
+                <h3>Layerzz Skull Pant</h3>
+                <p>₹1999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Layerzz Thunder Pant">
+                <img src="thunderpant.jpg" alt="Protein Supplement">
+                <h3>Layerzz Thunder Pant</h3>
+                <p>₹1899</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Fuaark's Black Track Pant">
+                <img src="trackpants1.jpg" alt="Protein Supplement">
+                <h3>Fuaark's Black Track Pant</h3>
+                <p>₹1399</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Fuaark's Grey Track Pant">
+                <img src="trackpants2.jpg" alt="Protein Supplement">
+                <h3>Fuaark's Grey Track Pant</h3>
+                <p>₹1399</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Fuaark's Olive Green Track Pant">
+                <img src="trackpants3.jpg" alt="Protein Supplement">
+                <h3>Fuaark's Olive Green Track Pant</h3>
+                <p>₹1399</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Momentum Joggers Coal Grey">
+                <img src="jogger1.jpg" alt="Protein Supplement">
+                <h3>Momentum Joggers Coal Grey</h3>
+                <p>₹1799</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Momentum Joggers Teal">
+                <img src="jogger2.jpg" alt="Protein Supplement">
+                <h3>Momentum Joggers Teal</h3>
+                <p>₹1999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Momentum Joggers Black">
+                <img src="jogger3.jpg" alt="Protein Supplement">
+                <h3>Momentum Joggers Black</h3>
+                <p>₹1999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Momentum Joggers Olive Green">
+                <img src="jogger5.jpg" alt="Protein Supplement">
+                <h3>Momentum Joggers Olive Green</h3>
+                <p>₹1999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Plain Joggers Black">
+                <img src="jogger4.jpg" alt="Protein Supplement">
+                <h3>Plain Joggers Black</h3>
+                <p>₹1999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            
+            <div class="product-item" data-name="Compression Teal by Layerzz">
+                <img src="compression1.jpg" alt="Protein Supplement">
+                <h3>Compression Teal by Layerzz</h3>
+                <p>₹2499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Compression Black by Layerzz">
+                <img src="compression2.jpg" alt="Protein Supplement">
+                <h3>Compression Black by Layerzz</h3>
+                <p>₹2499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Collared Compression White by Layerzz">
+                <img src="compression3.jpg" alt="Protein Supplement">
+                <h3>Collared Compression White by Layerzz</h3>
+                <p>₹2499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="Collared Compression Gutter Green by Fuaark">
+                <img src="compression5.jpg" alt="Protein Supplement">
+                <h3>Collared Compression Gutter Green by Fuaark</h3>
+                <p>₹2499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    
+ 
+    <script src="product.js"></script>
+   
+</body>
+
+   
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 The MuscleMart. All rights reserved.</p>
+    </footer>
+    <script>
+        function searchProducts() {
+            var input = document.getElementById('search-bar').value.toLowerCase();
+            var productItems = document.querySelectorAll('.product-item');
+    
+            productItems.forEach(function (item) {
+                var productName = item.getAttribute('data-name').toLowerCase();
+                if (productName.indexOf(input) > -1) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+    var cartButtons = document.querySelectorAll(".add-to-cart");
+    
+    cartButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            showNotification();
+        });
+    });
+    });
+        function showNotification() {
+            var notification = document.getElementById('notification');
+            notification.style.display = 'block';
+    
+            setTimeout(function () {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

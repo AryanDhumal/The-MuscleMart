@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - The MuscleMart</title>
+    <link rel="stylesheet" href="style1.css">
+  <style>
+    /* Toast Notification Styles */
+    .notification {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-align: center;
+        width: auto;
+        max-width: 80%;
+    }
+</style>
+</head>
+<body>
+   
+ <!-- Header Section -->
+ <header>
+    <div class="container">
+        <div class="logo">The MuscleMart</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html#shop-categories">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Search Bar Below Navigation -->
+<div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
+    <button type="submit" id="search-btn">Search</button>
+</div>
+
+<div class="notification" id="notification">
+   ThankYou! Item added to the cart.
+</div>
+
+<!-- Products Section -->
+<section class="products">
+    <h2>Machines a MuscleMonster needs</h2>
+    <div class="product-grid">
+        <div class="product-item" data-name="Hex-Squat Machine">
+            <img src="machine1.jpeg" alt="Hex-Squat Machine">
+            <h3>Hex-Squat Machine</h3>
+            <p>₹60000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Smith-Machine">
+            <img src="machine2.jpg" alt="Smith-Machine">
+            <h3>Smith-Machine</h3>
+            <p>₹35000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Preacher-Curls Machine">
+            <img src="machine3.jpg" alt="Preacher-Curls Machine">
+            <h3>Preacher-Curls Machine</h3>
+            <p>₹27000S</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Leg Curl-Extension Machine">
+            <img src="machine4.jpg" alt="Leg Curl-Extension Machine">
+            <h3>Leg Curl-Extension Machine</h3>
+            <p>₹34000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Lat Pull-Down Machine">
+            <img src="machine5.jpg" alt="Lat Pull-Down Machine">
+            <h3>Lat Pull-Down Machine</h3>
+            <p>₹74000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Lat Pull-Down Machine">
+            <img src="palychim.jpg" alt="Lat Pull-Down Machine">
+            <h3>Smartrun Davie 7 HP Peak Treadmill | 15-level Auto-Incline & Massager | Max Weight-150kg | Max Speed-20kmph</h3>
+            <p>₹65000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Lat Pull-Down Machine">
+            <img src="cyclem.jpg" alt="Lat Pull-Down Machine">
+            <h3>Smartbike c2: Spin bike with stepless magnetic resistance </h3>
+            <p>₹21999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Lat Pull-Down Machine">
+            <img src="peckdeck.jpg" alt="Lat Pull-Down Machine">
+            <h3>Peck Deck Machine</h3>
+            <p>₹25000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<script src="product.js"></script>
+
+</body>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2025 The MuscleMart. All rights reserved.</p>
+</footer>
+<script>
+    function searchProducts() {
+        var input = document.getElementById('search-bar').value.toLowerCase();
+        var productItems = document.querySelectorAll('.product-item');
+
+        productItems.forEach(function (item) {
+            var productName = item.getAttribute('data-name').toLowerCase();
+            if (productName.indexOf(input) > -1) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+var cartButtons = document.querySelectorAll(".add-to-cart");
+
+cartButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        showNotification();
+    });
+});
+});
+    function showNotification() {
+        var notification = document.getElementById('notification');
+        notification.style.display = 'block';
+
+        setTimeout(function () {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+</script>
+</body>
+</html>

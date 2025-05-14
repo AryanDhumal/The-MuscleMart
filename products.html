@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - The MuscleMart</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .notification {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+            width: auto;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <div class="container">
+        <div class="logo">The MuscleMart</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html#shop-categories">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
+    <button type="submit" id="search-btn">Search</button>
+</div>
+
+<!-- Products Section -->
+<section class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+        <div class="product-item" data-name="MB Biozyme Performance Whey | 2kg | Choco Creispers">
+            <img src="suppliments1.jpg" alt="Protein Supplement">
+            <h3>MB Biozyme Performance Whey | 2kg | Choco Creispers</h3>
+            <p>₹4999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="MB Biozyme Performance Whey | 4kg">
+            <img src="suppliments2.jpg" alt="Protein Supplement">
+            <h3>MB Biozyme Performance Whey | 4kg</h3>
+            <p>₹9499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="MB Pre Workout WrathX 0.75 lb cola frost | 300gm">
+            <img src="suppliments3.jpg" alt="Protein Supplement">
+            <h3>MB Pre Workout WrathX 0.75 lb cola frost | 300gm</h3>
+            <p>₹1329</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+       
+        <div class="product-item" data-name="MB Creatine Monohydrate | 300gm">
+            <img src="suppliments4.jpg" alt="Protein Supplement">
+            <h3>MB Creatine Monohydrate | 300gm</h3>
+            <p>₹899</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="MB Protein Peanut Butter Creamy | 1kg">
+            <img src="suppliments5.jpg" alt="Protein Supplement">
+            <h3>MB Protein Peanut Butter Creamy | 1kg</h3>
+            <p>₹625</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Big Muscles Premium Gold Whey | 2kg">
+            <img src="suppliments6.jpg" alt="Protein Supplement">
+            <h3>Big Muscles Premium Gold Whey | 2kg</h3>
+            <p>₹1399</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Big Muscles Nitra Isolate | 2kg">
+            <img src="suppliments7.jpg" alt="Protein Supplement">
+            <h3>Big Muscles Nitra Isolate | 2kg</h3>
+            <p>₹1699</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Big Muscles Karnage Pre-Workout | 300gm">
+            <img src="suppliments8.jpg" alt="Protein Supplement">
+            <h3>Big Muscles Karnage Pre-Workout | 300gm</h3>
+            <p>₹1299</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Big MuscleMart Creatine Monohydrate | 100gm">
+            <img src="suppliments9.jpg" alt="Protein Supplement">
+            <h3>Big MuscleMart Creatine Monohydrate | 100gm</h3>
+            <p>₹275</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Big Muscle Real Mass Gainer | 1Kg">
+            <img src="suppliments10.jpg" alt="Protein Supplement">
+            <h3>Big Muscle Real Mass Gainer | 1Kg</h3>
+            <p>₹1699</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Avvatar Whey Protein | 2kg | Malai Kulfi flavour">
+            <img src="suppliments11.jpg" alt="Protein Supplement">
+            <h3>Avvatar Whey Protein | 2kg | Malai Kulfi flavour</h3>
+            <p>₹5499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Avvatar Whey Protein | 2kg | Belgian Chocolate">
+            <img src="suppliments12.jpg" alt="Protein Supplement">
+            <h3>Avvatar Whey Protein | 2kg | Belgian Chocolate</h3>
+            <p>₹5499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Avvatar Creatine Monohydrate | 100gm">
+            <img src="suppliments13.jpg" alt="Protein Supplement">
+            <h3>Avvatar Creatine Monohydrate | 100gm</h3>
+            <p>₹499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Avvatar Muscle Gainer | 2kg">
+            <img src="suppliments14.jpg" alt="Protein Supplement">
+            <h3>Avvatar Muscle Gainer | 2kg</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Avvatar Mass Gainer | 2kg">
+            <img src="suppliments15.jpg" alt="Protein Supplement">
+            <h3>Avvatar Mass Gainer | 2kg</h3>
+            <p>₹2799</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-item" data-name="Stringer's by Layerzz | Stringer">
+            <img src="frontwhite11.jpg" alt="Stringer">
+            <h3>Stringer's by Layerzz</h3>
+            <p>₹599</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Stringer's by Layerzz | Track Pants">
+            <img src="Stringer3.jpg" alt="Track Pants">
+            <h3>Stringer's by Layerzz</h3>
+            <p>₹899</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Stringer's by Layerzz | Hoodie">
+            <img src="one (1).jpg" alt="Hoodie">
+            <h3>Stringer's by Layerzz</h3>
+            <p>₹1299</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Stringer's by Layerzz | Compression Wear">
+            <img src="blue1.jpg" alt="Compression Wear">
+            <h3>Stringer's by Layerzz</h3>
+            <p>₹799</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Stringer's by Fuaark | T-shirt">
+            <img src="Stringer5.jpg" alt="T-shirt">
+            <h3>Stringer's by Fuaark</h3>
+            <p>₹699</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Stringer's by Fuaark | Dumbbell">
+            <img src="Stringer6.jpg" alt="Dumbbell">
+            <h3>Stringer's by Fuaark</h3>
+            <p>₹1499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Stringer's by Fuaark | Plates">
+            <img src="Stringer7.jpg" alt="Plates">
+            <h3>Stringer's by Fuaark</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Stringer's by Fuaark | Barbell">
+            <img src="Stringer8.jpg" alt="Barbell">
+            <h3>Stringer's by Fuaark</h3>
+            <p>₹2499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Stringer's by Fuaark | Protein Supplement">
+            <img src="Stringer10.jpg" alt="Protein Supplement">
+            <h3>Stringer's by Fuaark</h3>
+            <p>₹1399</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Stringer's by Fuaark | Protein Supplement">
+            <img src="Stringer9.jpg" alt="Protein Supplement">
+            <h3>Stringer's by Fuaark</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Skull Zip Hoodie by Layerzz">
+            <img src="hoodie1.jpg" alt="Protein Supplement">
+            <h3>Skull Zip Hoodie by Layerzz</h3>
+            <p>₹2499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Thunder Hoodie by Layerzz">
+            <img src="hoodie2.jpg" alt="Protein Supplement">
+            <h3>Thunder Hoodie by Layerzz</h3>
+            <p>₹2499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Fuaark's White Hoodie">
+            <img src="hoodie3.jpg" alt="Protein Supplement">
+            <h3>Fuaark's White Hoodie</h3>
+            <p>₹1399</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Fuaark's Brown Zip Hoodie">
+            <img src="hoodie4.jpg" alt="Protein Supplement">
+            <h3>Fuaark's Brown Zip Hoodie</h3>
+            <p>₹1399</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Fuaark's Elephant Grey Hoodie">
+            <img src="hoodie5.jpg" alt="Protein Supplement">
+            <h3>Fuaark's Elephant Grey Hoodie</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Layerzz Skull Pant">
+            <img src="skullpant1.jpg" alt="Protein Supplement">
+            <h3>Layerzz Skull Pant</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Layerzz Thunder Pant">
+            <img src="thunderpant.jpg" alt="Protein Supplement">
+            <h3>Layerzz Thunder Pant</h3>
+            <p>₹1899</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Fuaark's Black Track Pant">
+            <img src="trackpants1.jpg" alt="Protein Supplement">
+            <h3>Fuaark's Black Track Pant</h3>
+            <p>₹1399</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Fuaark's Grey Track Pant">
+            <img src="trackpants2.jpg" alt="Protein Supplement">
+            <h3>Fuaark's Grey Track Pant</h3>
+            <p>₹1399</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Fuaark's Olive Green Track Pant">
+            <img src="trackpants3.jpg" alt="Protein Supplement">
+            <h3>Fuaark's Olive Green Track Pant</h3>
+            <p>₹1399</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Momentum Joggers Coal Grey">
+            <img src="jogger1.jpg" alt="Protein Supplement">
+            <h3>Momentum Joggers Coal Grey</h3>
+            <p>₹1799</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Momentum Joggers Teal">
+            <img src="jogger2.jpg" alt="Protein Supplement">
+            <h3>Momentum Joggers Teal</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Momentum Joggers Black">
+            <img src="jogger3.jpg" alt="Protein Supplement">
+            <h3>Momentum Joggers Black</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Momentum Joggers Olive Green">
+            <img src="jogger5.jpg" alt="Protein Supplement">
+            <h3>Momentum Joggers Olive Green</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Plain Joggers Black">
+            <img src="jogger4.jpg" alt="Protein Supplement">
+            <h3>Plain Joggers Black</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        
+        <div class="product-item" data-name="Compression Teal by Layerzz">
+            <img src="compression1.jpg" alt="Protein Supplement">
+            <h3>Compression Teal by Layerzz</h3>
+            <p>₹2499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Compression Black by Layerzz">
+            <img src="compression2.jpg" alt="Protein Supplement">
+            <h3>Compression Black by Layerzz</h3>
+            <p>₹2499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Womens Compression Black by Fuaark">
+            <img src="compression4.jpg" alt="Protein Supplement">
+            <h3>Womens Compression Black by Fuaark</h3>
+            <p>₹2499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Collared Compression White by Layerzz">
+            <img src="compression3.jpg" alt="Protein Supplement">
+            <h3>Collared Compression White by Layerzz</h3>
+            <p>₹2499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Collared Compression Gutter Green by Fuaark">
+            <img src="compression5.jpg" alt="Protein Supplement">
+            <h3>Collared Compression Gutter Green by Fuaark</h3>
+            <p>₹2499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        
+        <div class="product-item" data-name="Pro Sports Bra and Leggings Rust">
+            <img src="womensset2.jpg" alt="Protein Supplement">
+            <h3>Pro Sports Bra and Leggings Rust</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Pro Sports Bra and Leggings Grey">
+            <img src="womensset3.jpg" alt="Protein Supplement">
+            <h3>Pro Sports Bra and Leggings Grey</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Pro Sports Bra and Leggings Black">
+            <img src="womensset4.jpg" alt="Protein Supplement">
+            <h3>Pro Sports Bra and Leggings Black</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Pro Sports Bra Maroon">
+            <img src="womensset5.jpg" alt="Protein Supplement">
+            <h3>Pro Sports Bra Maroon</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Signature Oversized Joggers Classic Beige">
+            <img src="womensbottom1.jpg" alt="Protein Supplement">
+            <h3>Signature Oversized Joggers Classic Beige</h3>
+            <p>₹1799</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Pinnacle Straight Pants Olive">
+            <img src="womensbottom2.jpg" alt="Protein Supplement">
+            <h3>Pinnacle Straight Pants Olive</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Pinnacle Pocket Pants Teal">
+            <img src="womensbottom6.jpg" alt="Protein Supplement">
+            <h3>Pinnacle Pocket Pants Teal</h3>
+            <p>₹1999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Time Nylon Leggings Sage Green">
+            <img src="womensbottom4.jpg" alt="Protein Supplement">
+            <h3>Time Nylon Leggings Sage Green</h3>
+            <p>₹1119</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Signature Oversized Joggers Charcoal Black">
+            <img src="womensbottom5.jpg" alt="Protein Supplement">
+            <h3>Signature Oversized Joggers Charcoal Black</h3>
+            <p>₹1200</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="SBD Knee Wraps">
+            <img src="eqquipments7.jpg" alt="Protein Supplement">
+            <h3>SBD Knee Wraps</h3>
+            <p>₹4999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="SBD Wrist Straps">
+            <img src="eqquipment6.jpg" alt="Protein Supplement">
+            <h3>SBD Wrist Straps</h3>
+            <p>₹1499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="SBD Powerlifting Singlet">
+            <img src="eqquipment5.jpg" alt="Protein Supplement">
+            <h3>SBD Powerlifting Singlet</h3>
+            <p>₹35000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="SBD Knee Sleeves">
+            <img src="eqquipment4.jpg" alt="Protein Supplement">
+            <h3>SBD Knee Sleeves</h3>
+            <p>₹25999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="SBD Elbow Sleeves">
+            <img src="eqquipment3.jpg" alt="Protein Supplement">
+            <h3>SBD Elbow Sleeves</h3>
+            <p>₹4599</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="SBD Lever Belt">
+            <img src="eqquipment2.jpg" alt="Protein Supplement">
+            <h3>SBD Lever Belt</h3>
+            <p>₹25799</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="SBD Socks">
+            <img src="eqquipment8.jpg" alt="Protein Supplement">
+            <h3>SBD Socks</h3>
+            <p>₹999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="SBD Flat Sole Shoes White & Black">
+            <img src="eqquipment9.jpg" alt="Protein Supplement">
+            <h3>SBD Flat Sole Shoes White & Black</h3>
+            <p>₹2499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="SBD Flat Sole Shoes Green & Black">
+            <img src="eqquipment10.jpg" alt="Protein Supplement">
+            <h3>SBD Flat Sole Shoes Green & Black</h3>
+            <p>₹2499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Chamber of Gods Ammonia Salt for Powerlifting">
+            <img src="eqquipment11.jpg" alt="Protein Supplement">
+            <h3>Chamber of Gods Ammonia Salt for Powerlifting</h3>
+            <p>₹177</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        
+        <div class="product-item" data-name="Iron Dumbbell Set | 2.5-25kgs">
+            <img src="weights1.jpg" alt="Protein Supplement">
+            <h3>Iron Dumbbell Set | 2.5-25kgs</h3>
+            <p>₹45000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Metallic Plates - Sets of 6 | 25kgs">
+            <img src="weights2.jpg" alt="Protein Supplement">
+            <h3>Metallic Plates - Sets of 6 | 25kgs</h3>
+            <p>₹27000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Ez-bar | Pure Iron">
+            <img src="weights3.jpg" alt="Protein Supplement">
+            <h3>Ez-bar | Pure Iron</h3>
+            <p>₹19000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Barbell | Pure Iron">
+            <img src="weights4.jpg" alt="Protein Supplement">
+            <h3>Barbell | Pure Iron</h3>
+            <p>₹350000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Floor Mat | Set of 10 | Black">
+            <img src="weights5.jpg" alt="Protein Supplement">
+            <h3>Floor Mat | Set of 10 | Black</h3>
+            <p>₹25000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Hex-Squat Machine">
+            <img src="machine1.jpeg" alt="Protein Supplement">
+            <h3>Hex-Squat Machine</h3>
+            <p>₹45000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Smith-Machine">
+            <img src="machine2.jpg" alt="Protein Supplement">
+            <h3>Smith-Machine</h3>
+            <p>₹90000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Preacher-Curls Machine">
+            <img src="machine3.jpg" alt="Protein Supplement">
+            <h3>Preacher-Curls Machine</h3>
+            <p>₹40000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Leg Curl-Extension Machine">
+            <img src="machine4.jpg" alt="Protein Supplement">
+            <h3>Leg Curl-Extension Machine</h3>
+            <p>₹60000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Lat Pull Down Machine">
+            <img src="machine5.jpg" alt="Lat Pull Down Machine">
+            <h3>Lat Pull Down Machine</h3>
+            <p>₹35000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2025 The MuscleMart. All rights reserved.</p>
+</footer>
+
+<!-- Notification Element -->
+<div class="notification" id="notification">
+    Thank you! Product added to cart.
+</div>
+
+<!-- JavaScript -->
+<script>
+    function searchProducts() {
+        var input = document.getElementById('search-bar').value.toLowerCase();
+        var productItems = document.querySelectorAll('.product-item');
+
+        productItems.forEach(function (item) {
+            var productName = item.getAttribute('data-name').toLowerCase();
+            if (productName.indexOf(input) > -1) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    function showNotification() {
+        var notification = document.getElementById('notification');
+        notification.style.display = 'block';
+
+        setTimeout(function () {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+
+    // Attach event listeners to all "Add to Cart" buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', showNotification);
+    });
+</script>
+<script src="product.js"></script>
+
+</body>
+</html>

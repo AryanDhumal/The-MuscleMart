@@ -1,0 +1,167 @@
+\<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - The MuscleMart</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Toast Notification Styles */
+        .notification {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            text-align: center;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">The MuscleMart</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html#shop-categories">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Bar Below Navigation -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
+        <button type="submit" id="search-btn">Search</button>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2>Fuel up yourself with Avvatar's nutrition</h2>
+        <div class="product-grid">
+            <!-- Product Items -->
+            <div class="product-item" data-name="avvatar whey protein 2kg malai kulfi flavour">
+                <img src="suppliments11.jpg" alt="Protein Supplement">
+                <h3>Avvatar whey protein | 2kg | Malai Kulfi flavour</h3>
+                <p>₹5499</p>
+                <button class="add-to-cart" onclick="showNotification()">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="avvatar whey protein 2kg belgian chocolate">
+                <img src="suppliments12.jpg" alt="Protein Supplement">
+                <h3>Avvatar whey protein | 2kg | Belgian Chocolate</h3>
+                <p>₹5499</p>
+                <button class="add-to-cart" onclick="showNotification()">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="avvatar creatine monohydrate 100gm">
+                <img src="suppliments13.jpg" alt="Protein Supplement">
+                <h3>Avvatar Creatine Monohydrate | 100gm |</h3>
+                <p>₹499</p>
+                <button class="add-to-cart" onclick="showNotification()">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="avvatar muscle gainer 2kg">
+                <img src="suppliments14.jpg" alt="Protein Supplement">
+                <h3>Avvatar Muscle Gainer | 2kg |</h3>
+                <p>₹1999</p>
+                <button class="add-to-cart" onclick="showNotification()">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="avvatar mass gainer 2kg">
+                <img src="suppliments15.jpg" alt="Protein Supplement">
+                <h3>Avvatar Mass Gainer | 2kg |</h3>
+                <p>₹2799</p>
+                <button class="add-to-cart" onclick="showNotification()">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="avvatar mass gainer 2kg">
+                <img src="mangorush.jpg" alt="Protein Supplement">
+                <h3>Avvatar Whey Protein | 1 Kg | Mango Rush Flavour</h3>
+                <p>₹3019</p>
+                <button class="add-to-cart" onclick="showNotification()">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="avvatar mass gainer 2kg">
+                <img src="hazelnutavv.jpg" alt="Protein Supplement">
+                <h3>Avvatar Isorich Protein | 1 Kg | Chocolate Hazelnut Flavour</h3>
+                <p>₹3899</p>
+                <button class="add-to-cart" onclick="showNotification()">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="avvatar mass gainer 2kg">
+                <img src="hazelnut2.jpg" alt="Protein Supplement">
+                <h3>Avvatar Isorich Protein | 2 Kg | Chocolate Hazelnut Flavour</h3>
+                <p>₹7249</p>
+                <button class="add-to-cart" onclick="showNotification()">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 The MuscleMart. All rights reserved.</p>
+    </footer>
+
+    <!-- Notification Element -->
+    <div class="notification" id="notification">
+        Thank you! Item added to cart.
+    </div>
+
+    <script src="product.js"></script>
+    <script>
+        function searchProducts() {
+            var input = document.getElementById('search-bar').value.toLowerCase();
+            var productItems = document.querySelectorAll('.product-item');
+
+            productItems.forEach(function (item) {
+                var productName = item.dataset.name;
+                if (productName && productName.toLowerCase().includes(input)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function showNotification() {
+            var notification = document.getElementById('notification');
+            notification.textContent = "Thank you! Item added to cart."; // Static message
+            notification.style.display = 'block';
+
+             // **Call addToCart, but pass the product name some other way!**
+             // One option: access the data-name of the parent.  However, this
+             // means you'll *always* be adding the parent item.
+             var productName = this.parentNode.dataset.name;
+             addToCart(productName);
+
+
+            setTimeout(function () {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+
+       function addToCart(productName) {
+            // **Replace this with your actual cart implementation**
+            // This is a very basic example using local storage:
+            let cart = JSON.parse(localStorage.getItem('cart')) || []; // Get existing cart
+            cart.push(productName); // Add product to cart
+            localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart
+            console.log(productName + ' added to cart. Current cart:', cart); // Debugging
+
+            // **In a real application, you would likely use AJAX to send the
+            // product information to your server to update the user's cart.**
+        }
+    </script>
+</body>
+
+</html>

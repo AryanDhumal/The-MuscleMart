@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - The MuscleMart</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Add this line -->
+    <style>
+        /* Toast Notification Styles */
+        .notification {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+            width: auto;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+   
+ <!-- Header Section -->
+ <header>
+    <div class="container">
+        <div class="logo">The MuscleMart</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+
+                <li><a href="index.html#shop-categories">Shop</a></li>
+
+               
+ 
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+  <!-- Search Bar Below Navigation -->
+<div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
+    <button type="submit" id="search-btn">Search</button>
+</div>
+<!-- Notification Element -->
+<div class="notification" id="notification">
+    Item added to the cart.
+</div>
+
+
+
+<section class="products">
+    <h2>Fuel up yourself with bigmuscle's nutrition</h2>
+    <div class="product-grid">
+        <!-- Product Items -->
+        <div class="product-item" data-name="Big Muscles Premium Gold Whey">
+            <img src="suppliments6.jpg" alt="Protein Supplement">
+            <h3>Big Muscles Premium Gold Whey | 2kg |</h3>
+            <p>₹1399</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Big Muscles Nitra Isolate">
+            <img src="suppliments7.jpg" alt="Protein Supplement">
+            <h3>Big Muscles Nitra Isolate | 2kg |</h3>
+            <p>₹1699</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Big Muscles Karnage Pre-Workout">
+            <img src="suppliments8.jpg" alt="Protein Supplement">
+            <h3>Big Muscles Karnage Pre-Workout| 300gm |</h3>
+            <p>₹1299</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Big MuscleMart Creatine Monohydrate">
+            <img src="suppliments9.jpg" alt="Protein Supplement">
+            <h3>Big MuscleMart Creatine Monohydrate | 100gm |</h3>
+            <p>₹275</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Big Muscle Real Mass Gainer">
+            <img src="suppliments10.jpg" alt="Protein Supplement">
+            <h3>Big Muscle Real Mass Gainer | 1Kg |</h3>
+            <p>₹699</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+            <div class="product-item" data-name="Big Muscle Real Mass Gainer">
+                <img src="blackkar.jpg" alt="Protein Supplement">
+                <h3>Big Muscle Karnage Black Pre-Workout | 300gm |</h3>
+                <p>₹1699</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+                <div class="product-item" data-name="Big Muscle Real Mass Gainer">
+                    <img src="bmcitru.jpg" alt="Protein Supplement">
+                    <h3> Big Muscle Citrulline Malate | 50 Servings |</h3>
+                    <p>₹449</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                    <div class="product-item" data-name="Big Muscle Real Mass Gainer">
+                        <img src="bmglau.jpg" alt="Protein Supplement">
+                        <h3>Big Muscle Real Glutamine | 50 Servings |</h3>
+                        <p>₹450</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+        </div>
+    </div>
+</section>
+
+ 
+    <script src="product.js"></script>
+   
+</body>
+
+   
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 The MuscleMart. All rights reserved.</p>
+    </footer>
+    <script>
+        function searchProducts() {
+            var input = document.getElementById('search-bar').value.toLowerCase();
+            var productItems = document.querySelectorAll('.product-item');
+
+            productItems.forEach(function (item) {
+                var productName = item.getAttribute('data-name').toLowerCase();
+                if (productName.indexOf(input) > -1) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+    var cartButtons = document.querySelectorAll(".add-to-cart");
+
+    cartButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            showNotification();
+        });
+    });
+});
+        function showNotification() {
+            var notification = document.getElementById('notification');
+            notification.style.display = 'block';
+
+            setTimeout(function () {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
