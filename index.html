@@ -104,6 +104,15 @@
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/@adobe/adobe-client-data-layer@2.0.2/dist/adobe-client-data-layer.min.js"></script>
+  <script>
+  adobeDataLayer.push({
+    event: "pageView",
+    page: {
+      name: document.title,
+      url: window.location.href
+    }
+  });
+</script>
 </head>
 <body>
   <!-- Notification Popup -->
